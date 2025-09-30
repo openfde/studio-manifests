@@ -2,15 +2,14 @@
 <manifest>
   <remote name="aosp"
     fetch="https://android.googlesource.com/"
-    review="https://android-review.googlesource.com/"
-    revision="refs/heads/studio-2024.3.2" />
+    review="https://android-review.googlesource.com/"/>
+
+  <!-- <remote  name="aosp"
+    fetch="https://mirrors.tuna.tsinghua.edu.cn/git/AOSP"
+    review="android-review.googlesource.com"/> -->
 
   <remote name="fde"
     fetch="https://github.com/openfde/"
-    revision="refs/heads/studio-2024.3.2" />
-
-    <remote name="fde-test"
-    fetch="https://gitee.com/pngcui/"
     revision="refs/heads/studio-2024.3.2" />
 
   <default revision="refs/tags/studio-2024.3.2" remote="aosp" sync-j="4"/>
@@ -18,14 +17,14 @@
   <superproject name="platform/superproject" remote="aosp" revision="studio-2024.3.2"/>
   <contactinfo bugurl="go/repo-bug"/>
 
-  <project path="prebuilts/studio/jdk" name="studio-jdk-linux-arm64" clone-depth="1" remote="fde-test" revision="studio-2024.3.2"/>
-  <project path="prebuilts/studio/layoutlib" name="studio-layoutlib-linux-arm64" clone-depth="1" remote="fde-test" revision="studio-2024.3.2"/>
-  <project path="prebuilts/clang/host/linux-x86" name="studio-clang-linux-arm64" clone-depth="1" remote="fde-test" revision="studio-2024.3.2"/>
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="studio-gcc-linux-arm64" clone-depth="1" remote="fde-test" revision="studio-2024.3.2"/>
-  <project path="prebuilts/python/linux-x86" name="studio-python-linux-arm64" clone-depth="1" remote="fde-test" revision="studio-2024.3.2"/>
-  <project path="prebuilts/studio/sdk/linux" name="studio_sdk" clone-depth="1" remote="fde-test" revision="studio-2024.3.2"/>
+  <project path="prebuilts/studio/jdk" name="studio-jdk-linux-arm64" clone-depth="1" remote="fde" revision="studio-2024.3.2"/>
+  <project path="prebuilts/studio/layoutlib" name="studio-layoutlib-linux-arm64" clone-depth="1" remote="fde" revision="studio-2024.3.2"/>
+  <project path="prebuilts/clang/host/linux-x86" name="studio-clang-linux-arm64" clone-depth="1" remote="fde" revision="studio-2024.3.2"/>
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="studio-gcc-linux-arm64" clone-depth="1" remote="fde" revision="studio-2024.3.2"/>
+  <project path="prebuilts/python/linux-x86" name="studio-python-linux-arm64" clone-depth="1" remote="fde" revision="studio-2024.3.2"/>
+  <project path="prebuilts/studio/sdk/linux" name="studio_sdk" clone-depth="1" remote="fde" revision="studio-2024.3.2"/>
   <project path="android_studio-patches" name="android_studio-patches" remote="fde" revision="studio-2024.3.2">
-    <linkfile src="android_studio-patches/build.sh" dest="build.sh" />
+    <linkfile src="build.sh" dest="build.sh" />
   </project>
 
   <project path="build/bazel" name="platform/build/bazel"/>
